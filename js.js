@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    // 返回上一瀏覽紀錄
+  $(".Backbutton").on("click",function(){
+    window.history.back();
+  });
     //證照 Skill
   let container_Certifications=document.querySelector(".container_Certifications");
   $.ajax({

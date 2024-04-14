@@ -234,7 +234,10 @@ img{
     color: #fff;
     align-items: center;
 }
-
+.Backbutton{
+	height: 4vh;
+	width: 50px;
+}
 .header_img{
 	width: 300px;
 	margin: 10px;
@@ -260,7 +263,7 @@ img{
 	color: #ffffff;
 }
 .Main_options_row :hover{
-	color: #c4c4e3;
+	color: #f7f7f7;
 }
 /* 次選 */
 .Secondary{
@@ -581,6 +584,7 @@ img{
     float: left;
     color: #0c0b0e;
 }
+
 /* ////   */
 .The_content{
     margin: auto;
@@ -629,6 +633,9 @@ img{
 }
 .Internship_experience_else{
 	display: none;
+}
+.Internship_experience_else li{
+	font-size: 14px;
 }
 .work_1_more{
 	color: #0d6484;
