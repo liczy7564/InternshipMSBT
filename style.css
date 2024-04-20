@@ -456,9 +456,6 @@ img{
 	}
 } 
 @media (max-width:600px) {  /* 小 */
-	.lm_170{
-		width: 100%;
-	}
 	.about_Skill_revision{
 		width: 93%;
 		margin-left: 5%;
