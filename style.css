@@ -572,8 +572,9 @@ img{
     float: left;
     background-color: #eaebf5;
 	border-radius: 15px;
-    padding: 0px 10px 0px 10px;
-	height:300px ;
+    padding: 10px;
+	margin-botton:10px;
+	
 }
 .consultative_text {
     width: 100%;
