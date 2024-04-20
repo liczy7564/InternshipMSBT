@@ -341,7 +341,7 @@ img{
 
 /* 共通 */
 .theme_title{
-	margin: 100px 0px 15px 0px;
+	margin-top: 100px;
 	padding: -100px 0px 0px 0px;
 }
 .title_1{
@@ -457,6 +457,9 @@ img{
 	.theme {
     min-height: 75vh;
 	}
+	.theme_title{
+		margin-bottom: 30px;
+	}
 } 
 @media (max-width:600px) {  /* 小 */
 	.about_Skill_revision{
@@ -476,6 +479,9 @@ img{
 	}
 	.tin_70{
 		width: 70%;
+	}
+	.theme_title{
+		margin-bottom: 15px;
 	}
 }
 
