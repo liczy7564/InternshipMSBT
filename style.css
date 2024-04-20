@@ -137,15 +137,15 @@ img{
 	bottom: 20px;
 	right: 24px;
 	z-index: 100;
-	color: #535965;
 	padding: 0px;
-	opacity: 0.2;
 	font-size: 2.8em;
 	display: none;
 }
 .fa-arrow-circle-up{
 	border-radius: 40.5px;
 	background-color: #ffffff;
+	color: #535965;
+	opacity: 0.2;
 }
 
 /* .zz{
@@ -560,7 +560,7 @@ img{
 }
 .box_section{
 	padding:42px 0px 0px 0px ;
-	margin-top:-10x ;
+	margin-top:-10px ;
 
 }
 .container_Skill{
