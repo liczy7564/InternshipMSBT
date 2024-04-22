@@ -4,6 +4,7 @@ $(document).ready(function(){
   $(".Backbutton").on("click",function(){
     window.history.back();
   });
+
     //證照 Skill
   let container_Certifications=document.querySelector(".container_Certifications");
   $.ajax({
@@ -75,13 +76,34 @@ $(document).ready(function(){
       }
     }
   });
-
+  let ajax_cooperate=document.querySelector(".ajax_cooperate");
+  $.ajax({
+    url:"cooperate.json",
+    success:function(result){
+      for(let i=0;i<result.length;i++){
+        if(result[i]['type_2'] === null){
+          result[i]['type_2'] = "";
+        }
+        if(result[i]['link_2'] === null){
+          result[i]['link_2'] = "";
+        }
+        if(result[i]['link_title_2'] === null){
+          result[i]['link_title_2'] = "";
+        }
+      }
+      for(let i=0;i<result.length;i++){
+      ajax_cooperate.innerHTML+="<div class='cooperate_block'><"+result[i]['media']+" class='cooperate_img'loading='lazy' src='"+
+      result[i]['media_src']+"' style='width: 100%;' alt=''></"+result[i]['media']+"><h6 >"+
+      result[i]['Name']+"</h6><div class='cooperate_contact'><span class='title_2'>"+
+      result[i]['type_1']+"</span><br><a href='"+result[i]['link_1']+"'>"+result[i]['link_title_1']+"</a><br><span class='title_2'>"+
+      result[i]['type_2']+"</span><br><a href='"+result[i]['link_2']+"'>"+result[i]['link_title_2']+"</a><br>"
+      }
+    }
+  });
 
 
   // 主選項打開副選項
   let Main_option= document.getElementsByClassName("Main_options"); 
-
-
   let Secondary = document.getElementsByClassName("Secondary"); 
   Secondary[0].style.display = "block";
   $(".Main_options").on("click",function(){
@@ -93,8 +115,9 @@ $(document).ready(function(){
     $('html, body').animate({
         scrollTop: offsetTop
     }, 100); // 捲動的時間（毫秒）
-    // $(".Main_options").animate({scrollTop:0},10)
   });
+
+
  // 主選項樣式
   function Main_options(num) { 
     let i;

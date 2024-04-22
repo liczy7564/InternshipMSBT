@@ -633,6 +633,169 @@ img{
 
 
 
+/* ----------------公司介紹---------------- */
+
+/* 公司簡介 */
+
+.company_img{
+	object-position: center center; 
+	object-fit: scale-down;
+	display: block;
+	height: 15vw;
+	margin: 10px auto 10px auto;
+	background-repeat: no-repeat;
+	max-height: 350px;
+	min-height: 170px;
+	border-radius: 5px;
+	padding: 0 10px 25px 10px;
+}
+.collapsed.company_item_title::before{
+	content: none;
+}
+.company_item_title{
+	width: 100%;
+    padding: 10px;
+    border: 1px solid #f1e9e5;
+    border-radius: 5px;
+    background:#fffcfb;
+}
+.company_item_title::before{
+	content: '◇';
+}
+.company_item_title:active::before {
+    content: '☆';
+    color: #997485;
+}
+.accordion{
+	border: 1px solid #efefef;
+	border-radius: 5px;
+	margin-bottom:40PX ;
+}
+.company_fa_block img{
+	width:40px;
+}
+
+/* 1. */
+/* 2. */
+
+.company_brands{
+	overflow-x: auto;
+	display: flex;
+	height: 190px;
+}
+
+.company_brands_block{
+	width: 220px;
+	text-align: center;
+	margin:10px 20px auto 0px;
+	padding: 11px;
+}
+.company_brands_img{
+	aspect-ratio: 4/3;
+	object-fit: cover;
+	display: flex;
+	border-radius: 5px;
+	width: 150px;
+}
+.company_brands_block:hover{
+	border: 1px solid #9d6b6b;
+	border-radius: 15px;
+	padding: 10px;
+	height: fit-content;
+}
+.company_brands_img:hover{
+	aspect-ratio: 4/3;
+	object-fit: cover;
+	display: flex;
+	width: 160px;
+}
+/* 3. */
+.company_fa{
+	display: flex; 
+	height: 120px; 
+	overflow-x: auto;
+}
+.company_fa_icon{
+font-size: 33px;
+margin: 10px;
+color: #997485;
+}
+
+.company_fa_icon:hover{
+    font-weight: 900;
+    font-size: 36px;
+	color: #517078;
+}
+.company_fa_block{
+	color: #495F82;
+	width: fit-content;
+	margin:5px;
+	padding: 5px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* canvas */
+@keyframes infinite-slide {
+	0% {
+	  transform: translateX(0);
+	}
+	100% {
+	  transform: translateX(-50%);
+	}
+  }
+  
+  .wrap{
+	overflow: hidden;
+        position: relative;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #cccccc;
+        white-space: nowrap;
+
+  }
+  .slide-dom{
+	width:max-content;
+	animation: infinite-slide 10s linear infinite;
+  }
+  /* 鼠标悬浮时暂停动画 */
+  .slide-dom:hover{
+	animation-play-state: paused;
+  }
+  .cooperate{
+	margin: auto;
+	border-radius: 10px;
+	border:1px solid #eda282c7;
+  }
+  .cooperate_content{
+	display: flex;
+	justify-items: center;
+	overflow-x: auto;
+  }
+  .cooperate_block{
+	display:inline-block;
+		border:2px solid #c796aac7;
+		width: fit-content;
+		padding: 10px;
+		width: 75vw;
+		max-width: 450px;
+		margin:  10px;
+		border-radius: 10px;
+	
+  }
+  .cooperate_contact{
+	width: 100%;
+  }
+  .cooperate_block a{
+	font-size: 13px;
+	white-space: normal;
+	color: #938b8b;
+	float: left;
+  }
+/*end 公司介紹 */
+
+
+
 /*---------------實習內容---------------- */
 
 
