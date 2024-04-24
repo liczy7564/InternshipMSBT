@@ -651,6 +651,8 @@ img{
 }
 .the_company_count{
 	font-size: 15px;
+	font-weight: 500;
+	color: #054282;
 }
 .the_company_count_name{
 	font-size: 13px;
