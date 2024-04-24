@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+ 
     // 返回上一瀏覽紀錄
   $(".Backbutton").on("click",function(){
     window.history.back();

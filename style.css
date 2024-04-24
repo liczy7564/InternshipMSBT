@@ -24,6 +24,13 @@ a{
 	color: #054282;
 	text-decoration: none;
 }
+*::-webkit-scrollbar {
+	display: none; /* 隱藏滾動條 */
+}
+  
+* {
+	scrollbar-width: none; /* Firefox 隱藏滾動條 */
+}
 @media (min-width:700px) {	/* 大 */
 	p{
 		color: #475059; 
@@ -183,10 +190,11 @@ img{
 }
 @media (min-width:600px) {	/* 大 */
 	.about_me{
-		background: url(img/main/首圖.png);
-		aspect-ratio: 19/10;
+		background-image: url(img/main/首圖.png);
+		aspect-ratio: 7/4;
 		background-size: 100% 100%;
 		object-fit: cover;
+		background-color: #EBF0FF;
 	}
 	.about_Skill_container{
 		max-width: 700px;
@@ -194,20 +202,21 @@ img{
 	}
 	.about{
 		height: 100%;
-		padding-top: 17%;
-		padding-left: 7%;
-		font-size: 19px;
+		padding-top: 21%;
+		padding-left: 17%;
 	}
 } 
 @media (max-width:600px) {  /* 小 */
 	.about_me{
-		background:url(img/main/首圖phone.png) ;
+		background-image:url(img/main/首圖phone.png) ;
 		aspect-ratio:10/ 9;
 		object-fit: cover;
 		background-repeat:no-repeat ;
 		background-size: cover; 
 		background-position: center;
+		background-color: #EBF0FF;
 	}
+	
 	.about{
 		height: 100%;
 		padding-top: 28%;
@@ -236,6 +245,7 @@ img{
 }
 .Backbutton{
 	height: 4vh;
+	padding: 1cqmax;
 	width: 50px;
 }
 .header_img{
@@ -252,7 +262,7 @@ img{
 	position: sticky;
 	top: 0px;
 	z-index: 2;
-	background-color: #054282;
+	background-color: #153A8D;
 }
 .Main_options{
 	padding: 7px;
@@ -279,6 +289,7 @@ img{
 	background-color: #FFF;
 	border-bottom:solid 1px #B5B7BB;
 }
+
 .Secondary_container a{
 	color:#054282;
 }
@@ -460,6 +471,9 @@ img{
 	.theme_title{
 		margin-bottom: 30px;
 	}
+	.max_64w{
+		max-width: 640px;
+	}
 } 
 @media (max-width:600px) {  /* 小 */
 	.about_Skill_revision{
@@ -517,6 +531,8 @@ img{
 .about_me_img{
 	width: 100%; 
 	border-radius: 200px;
+	max-width: 250px;
+	align-items: center;
 }
 .cooperate_img{
 	aspect-ratio: 4/3;
@@ -579,7 +595,6 @@ img{
 }
 .box_main {
     width: 100%;
-    float: left;
     background-color: #eaebf5;
 	border-radius: 15px;
     padding: 0px 10px 30px 10px;
@@ -587,11 +602,12 @@ img{
 }
 .consultative_text {
     width: 100%;
-    text-align: left;
-	line-height: 40px;
+    text-align: center;
+    line-height: 55px;
+    margin-top: 10px;
 }
 .readable_text {
-    float: left;
+    /* float: left; */
     color: #0c0b0e;
 }
 
@@ -631,39 +647,65 @@ img{
 
 /*----------------end 實習生---------------- */
 
-.read_more{
-	color: #596c7e;
-	font-weight: 600;
-}
+
 
 /* ----------------公司介紹---------------- */
 
 /* 公司簡介 */
 .the_company_img{
-	width: 95%; 
+	width: 95%;
 	max-width: 140px;
 	border-radius: 200px;
+	margin-left: 8px;
 }
 .the_company_block{
 	width: 33%;
 	float: left;
 	text-align: center;
 }
-.the_company_count{
-	font-size: 15px;
-	font-weight: 500;
-	color: #054282;
+@media (min-width:600px) {	/* 大 */
+	.the_company_count{
+		font-size: 23px;
+		font-weight: 500;
+		color: #054282;
+	}
+	.the_company_count_name{
+		font-size: 15px;
+	}
+	.the_company_title{
+		font-size: 17px;
+	}
+	.the_company_content{
+		font-size: 14px;
+	}
+	
+} 
+@media (max-width:600px) {  /* 小 */
+	.the_company_count{
+		font-size: 17px;
+		font-weight: 500;
+		color: #054282;
+	}
+	.the_company_count_name{
+		font-size: 10px;
+	}
+	.the_company_title{
+		font-size: 15px;
+	}
+	.the_company_content{
+		font-size: 13px;
+	}
 }
-.the_company_count_name{
-	font-size: 13px;
-}
+
 .the_company_title{
-	font-size: 15px;
 	font-weight: 500;
-	font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 8px;
+}
+.the_company_content{
+	color: black;
+	padding-left: 8px;
 }
 .the_company_Introduction{
-	width: 100%;
 	display: flex;
     align-items: center;
 }
@@ -671,17 +713,15 @@ img{
 .company_fa_block img{
 	width:40px;
 }
-
-.company_brands{
-	overflow-x: auto;
-	display: flex;
-	height: 190px;
+.read_more{
+	color: #596c7e;
+	font-weight: 600;
+	margin-left: 8px;
 }
-
 /* 3. */
 .company_fa{
 	display: flex; 
-	height: 110px; 
+	height: 130px; 
 	overflow-x: auto;
 }
 .company_fa_icon{
