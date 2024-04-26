@@ -9,7 +9,7 @@ $(document).ready(function(){
     //證照 Skill
   let container_Certifications=document.querySelector(".container_Certifications");
   $.ajax({
-    url:"Certificate.json",
+    url:"Json/Certificate.json",
     success:function(result){
       for(let i=0;i<result.length;i++){
       container_Certifications.innerHTML+="<div class='about_Skill_5 mar_auto'><p>"+
@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 	let Skill=document.querySelector(".container_Skill");
   $.ajax({
-    url:"skill.json",
+    url:"Json/skill.json",
     success:function(result){
       for(let i=0;i<result.length;i++){
       Skill.innerHTML+="<div class='about_Skill_3 .mar_auto'><p>"+
@@ -35,7 +35,7 @@ $(document).ready(function(){
   // 大學經歷
   let Activity_1=document.querySelector(".container_Activity_1");
   $.ajax({
-    url:"Activity.json",
+    url:"Json/Activity.json",
     success:function(result){
       for(let i=0;i<5;i++){
         Activity_1.innerHTML+="<div class='row'><div class='col-5'><p>"+
@@ -57,7 +57,7 @@ $(document).ready(function(){
   });
   let Activity_3=document.querySelector(".container_Activity_3");
   $.ajax({
-    url:"Activity.json",
+    url:"Json/Activity.json",
     success:function(result){
       for(let i=10;i<16;i++){
         Activity_3.innerHTML+="<div class='row'><div class='col-5'><p>"+
@@ -77,9 +77,25 @@ $(document).ready(function(){
       }
     }
   });
+  let album=document.querySelector(".album");
+  $.ajax({
+    url:"Json/album.json",
+    success:function(result){
+      var html = "<div class='carousel-inner'>";
+     
+      for(let i=0;i<result.length;i++){
+        html +="<div class='carousel-item Memoirs_block '><img src='"+
+      result[i]['img']+"'class=' Memoirs_img'><p>"+
+      result[i]['img']+"</p></div>"
+      }
+      html +="</div><div class='carousel-control-prev carousel_2'  data-bs-target='#carousel' data-bs-slide='prev'></div><div class='carousel-control-next carousel_2' data-bs-target='#carousel' data-bs-slide='next'></div>";
+      album.innerHTML+=html;
+      $(".Memoirs_block:first").addClass("active");
+    }
+  });
   let ajax_cooperate=document.querySelector(".ajax_cooperate");
   $.ajax({
-    url:"cooperate.json",
+    url:"Json/cooperate.json",
     success:function(result){
       for(let i=0;i<result.length;i++){
         if(result[i]['type_2'] === null){
@@ -101,7 +117,7 @@ $(document).ready(function(){
       }
     }
   });
-
+  
 
   // 主選項打開副選項
   let Main_option= document.getElementsByClassName("Main_options"); 

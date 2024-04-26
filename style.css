@@ -188,6 +188,7 @@ img{
 		background-size: cover; 
 		background-position: center;
 		background-color: #EBF0FF;
+		background-attachment: eager;
 	}
 	
 	.about{
@@ -213,6 +214,7 @@ img{
 		background-size: 100% 100%;
 		object-fit: cover;
 		background-color: #EBF0FF;
+		background-attachment: eager;
 	}
 	.about_Skill_container{
 		max-width: 700px;
@@ -850,13 +852,14 @@ img{
 }
 .work_container{
 	background: url(img/內容/Day_1.png);
-	background-size: Contain;  
+	background-size: contain;  
 	background-repeat: no-repeat;
 	width: 150px;
 	margin-left: 20px;
 	margin-right: 20px;
-	/* margin-top: -150px;
-	padding-top: 150px; */
+
+	background-attachment: lazy;
+	
 }
 .Slide_leftright{
 	overflow: hidden;
