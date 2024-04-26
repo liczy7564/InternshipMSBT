@@ -86,7 +86,7 @@ $(document).ready(function(){
       for(let i=0;i<result.length;i++){
         html +="<div class='carousel-item Memoirs_block '><img src='"+
       result[i]['img']+"'class=' Memoirs_img'><p>"+
-      result[i]['img']+"</p></div>"
+      result[i]['text']+"</p></div>"
       }
       html +="</div><div class='carousel-control-prev carousel_2'  data-bs-target='#carousel' data-bs-slide='prev'></div><div class='carousel-control-next carousel_2' data-bs-target='#carousel' data-bs-slide='next'></div>";
       album.innerHTML+=html;
