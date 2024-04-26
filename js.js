@@ -1,12 +1,10 @@
 $(document).ready(function(){
-
- 
     // 返回上一瀏覽紀錄
   $(".Backbutton").on("click",function(){
     window.history.back();
   });
 
-    //證照 Skill
+    //大學證照
   let container_Certifications=document.querySelector(".container_Certifications");
   $.ajax({
     url:"Json/Certificate.json",
@@ -19,7 +17,7 @@ $(document).ready(function(){
       }
     }
   });
-
+ // 實習運用
 	let Skill=document.querySelector(".container_Skill");
   $.ajax({
     url:"Json/skill.json",
@@ -46,7 +44,7 @@ $(document).ready(function(){
   });
   let Activity_2=document.querySelector(".container_Activity_2");
   $.ajax({
-    url:"Activity.json",
+    url:"Json/Activity.json",
     success:function(result){
       for(let i=5;i<10;i++){
         Activity_2.innerHTML+="<div class='row'><div class='col-5'><p>"+
@@ -68,7 +66,7 @@ $(document).ready(function(){
   });
   let Activity_4=document.querySelector(".container_Activity_4");
   $.ajax({
-    url:"Activity.json",
+    url:"Json/Activity.json",
     success:function(result){
       for(let i=16;i<20;i++){
         Activity_4.innerHTML+="<div class='row'><div class='col-3'><p>"+
@@ -77,19 +75,19 @@ $(document).ready(function(){
       }
     }
   });
+  // 回憶錄
   let album=document.querySelector(".album");
   $.ajax({
     url:"Json/album.json",
     success:function(result){
-      var html = "<div class='carousel-inner'>";
-     
+      var html_album = "<div class='carousel-inner'>";
       for(let i=0;i<result.length;i++){
-        html +="<div class='carousel-item Memoirs_block '><img src='"+
-      result[i]['img']+"'class=' Memoirs_img'><p>"+
+        html_album +="<div class='carousel-item Memoirs_block '><img src='"+
+      result[i]['img']+"'class=' memoirs_img'><p>"+
       result[i]['text']+"</p></div>"
       }
-      html +="</div><div class='carousel-control-prev carousel_2'  data-bs-target='#carousel' data-bs-slide='prev'></div><div class='carousel-control-next carousel_2' data-bs-target='#carousel' data-bs-slide='next'></div>";
-      album.innerHTML+=html;
+      html_album +="</div><div class='carousel-control-prev carousel_2'  data-bs-target='#carousel' data-bs-slide='prev'></div><div class='carousel-control-next carousel_2' data-bs-target='#carousel' data-bs-slide='next'></div>";
+      album.innerHTML+=html_album;
       $(".Memoirs_block:first").addClass("active");
     }
   });
@@ -146,43 +144,43 @@ $(document).ready(function(){
     Main_option[num].style.color="#fff";
   }	
 
-   // 主選項打開副選項
+   // 小總覽
   let work_option= document.getElementsByClassName("work_options");
   let work_container = document.getElementsByClassName("work_container"); 
   work_container[0].style.color= "#efefef"; 
   
-  $(".work_options").on("click",function(){
+  $(".work_options").on("click", function() {
     let value1 = $(this).attr("value");
     work_options(value1);
-
-    workContainers.forEach(workContainer => {
-    const containerRect = document.querySelector('.Slide_leftright').getBoundingClientRect();
+  
+    var targetOffset = $(".work_container[value='" + value1 + "']").offset().left;
+    var containerRect = document.querySelector('.Slide_leftright').getBoundingClientRect();
     var currentScrollLeft = $('#marker').scrollLeft();
-    var targetOffset = $(".work_container[value='"+value1+"']").offset().left;
     
-    var ans=currentScrollLeft-containerRect.left+targetOffset-42;
-    $('#marker').animate({scrollLeft: ans}, 500);
-    });
+    var ans = targetOffset - containerRect.left - 42 + currentScrollLeft;
+    $('#marker').animate({ scrollLeft: ans }, 500);
   });
+  
   const container = $('.Slide_leftright');
   const workContainers = document.querySelectorAll('.work_container');
+
 
   //滑動位置顯示上色
   function work_showelementor() {
     const valuesArray = [];
     workContainers.forEach(workContainer => {
-          const elementRect = workContainer.getBoundingClientRect();
-          const containerRect = document.querySelector('.Slide_leftright').getBoundingClientRect();
-          if (
-              elementRect.left<= containerRect.right-40 &&
-              elementRect.left>= containerRect.left-90
-          ) {
-            let value = workContainer.getAttribute("value");
-            let numericValue = parseInt(value, 10);
-            valuesArray.push(numericValue );
-          } 
-      });
-      work_options(...valuesArray);
+      const elementRect = workContainer.getBoundingClientRect();
+      const containerRect = document.querySelector('.Slide_leftright').getBoundingClientRect();
+      if (
+          elementRect.left<= containerRect.right-40 &&
+          elementRect.left>= containerRect.left-90
+      ) {
+        let value = workContainer.getAttribute("value");
+        let numericValue = parseInt(value, 10);
+        valuesArray.push(numericValue);
+      } 
+    });
+  work_options(...valuesArray);
   }
 //點擊標題位置顯示上色
   function work_options(value1,value2) { 
@@ -206,27 +204,24 @@ $(document).ready(function(){
   });
 
   $(".work_1_more").click(function(){
-    $(".work_1_more_open").slideToggle("slow");
+  $(".work_1_more_open").slideToggle("slow");
 
-    let work_1_more=document.querySelector(".work_1_more");
+  let work_1_more=document.querySelector(".work_1_more");
 
 
-setTimeout(function() {
+  setTimeout(function() {
     if ($('.work_1_more_open').css('display') === 'none') {
-        work_1_more.innerHTML = "查看說明";
-      }else{
-        work_1_more.innerHTML = "收起說明";
-      }
-    }, 1000);
+      work_1_more.innerHTML = "查看說明";
+    }else{
+      work_1_more.innerHTML = "收起說明";
+    }
+  }, 1000);
 
   });
   $(".Internship_experience_more").click(function(){
     $(".Internship_experience_else").slideToggle("slow");
   });
-  // let open=document.querySelector(".open");
-	// open.innerHTML += "開獎";
-  // 置頂按鈕
-
+  // top-Anchor
   $(function(){
     $('.top-Anchor').click(function(){ 
       $('html,body').animate({scrollTop:0}, 333);

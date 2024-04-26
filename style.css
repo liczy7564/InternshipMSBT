@@ -150,8 +150,13 @@ img{
 .fa-arrow-circle-up{
 	border-radius: 40.5px;
 	background-color: #ffffff;
-	color: #535965;
-	opacity: 0.2;
+	color: #8f94a0;
+	opacity: .3;
+}
+.fa-arrow-circle-up:hover { /* 修改選擇器 */
+    border-radius: 40.5px;
+    background-color: #ffffff;
+    color: #535965;
 }
 /* -----------icon END---------*/
 /* -------------------about_me----------------- */
@@ -241,10 +246,6 @@ img{
 	padding: 1cqmax;
 	width: 50px;
 }
-.header_img{
-	width: 300px;
-	margin: 10px;
-}
 .text_nowrap{
 	white-space:nowrap
 }
@@ -308,6 +309,8 @@ img{
 	overflow-x: auto;
 	background-color: #FFF;
 	border-bottom:solid 1px #6b6c7b;
+	max-height: 305px;
+	overflow: auto;
 }
 .work_row a{
 	color: #8D8D8D;
@@ -317,7 +320,7 @@ img{
 }
 
 .work_options{
-	width: 100%;
+	/* width: 100%; */
 	white-space: nowrap;
 	text-align: center;
 	margin: 5px ;
@@ -326,7 +329,7 @@ img{
 	aspect-ratio: 4 / 3; 
 	object-position: center center;
     display: block;
-    border-radius: 220.5px;
+    border-radius: 220px;
     width: 200px;
 }
 .work_block{
@@ -335,7 +338,8 @@ img{
 	color: #4a4a4a;
 	font-size: 14px;
 	line-height: 30px;
-	font-family: times, serif;  font-style:italic;
+	font-family: times, serif;  
+	font-style:italic;
 	text-shadow: 4px 4px 15px #266ab4;
 }
 
@@ -346,7 +350,7 @@ img{
 /* 共通 */
 .theme_title{
 	margin-top: 100px;
-	padding: -100px 0px 0px 0px;
+	padding-top: -100px;
 }
 .title_1{
 	color: #333399;
@@ -412,6 +416,38 @@ img{
 
 
 /* img */
+.memoirs_img{
+	height: 240px;
+	/* object-fit: cover; */
+	border-radius: 5px;
+	overflow: hidden;
+}
+.company_img{
+	width: 95%;
+	max-width: 140px;
+	border-radius: 200px;
+	margin-left: 8px;
+}
+.university_img{
+	aspect-ratio: 4 / 3; 
+	width: 100%;
+	overflow: hidden;
+	height:100%;
+	object-fit: cover;
+	object-position: center;
+}
+.about_me_img{
+	width: 100%; 
+	border-radius: 200px;
+	max-width: 250px;
+	align-items: center;
+}
+.cooperate_img{
+	aspect-ratio: 4/3;
+	object-fit: cover;
+	display: flex;
+	border-radius: 12px;
+}
 /* endimg */
 
 
@@ -517,18 +553,7 @@ img{
     display: flex;
     align-items: center;
 }
-.about_me_img{
-	width: 100%; 
-	border-radius: 200px;
-	max-width: 250px;
-	align-items: center;
-}
-.cooperate_img{
-	aspect-ratio: 4/3;
-	object-fit: cover;
-	display: flex;
-	border-radius: 12px;
-}
+
 .about_motivation_box_text{
 	padding: 18px;
 }
@@ -619,21 +644,23 @@ img{
     display: flex;
 	border: 1px solid #efefef;
 }
-.university_img{
-	aspect-ratio: 4 / 3; 
-	width: 100%;
-	overflow: hidden;
-	height:100%;
-	object-fit: cover;
-	object-position: center;
-}
 .university_title{
 	letter-spacing: 7px;
 	line-height: 40px !important;
 	text-align: center;
 }
 
-
+.icon_1{
+    color: #000;
+    border: solid;
+    text-rendering: auto;
+    padding: 10px;
+    border-radius: 55px;
+}
+.carousel_1{
+	width: 10% !important;
+	opacity: .3;
+}
 /*----------------end 實習生---------------- */
 
 
@@ -641,12 +668,6 @@ img{
 /* ----------------公司介紹---------------- */
 
 /* 公司簡介 */
-.the_company_img{
-	width: 95%;
-	max-width: 140px;
-	border-radius: 200px;
-	margin-left: 8px;
-}
 .the_company_block{
 	width: 33%;
 	float: left;
@@ -707,7 +728,7 @@ img{
 	font-weight: 600;
 	margin-left: 8px;
 }
-/* 3. */
+
 .company_fa{
 	display: flex; 
 	height: 130px; 
@@ -786,14 +807,9 @@ img{
 	color: #938b8b;
 	float: left;
 }
-/*end 公司介紹 */
-
-
+/* ----------------公司介紹end---------------- */
 
 /*---------------實習內容---------------- */
-
-
-/*---------------- 實習心得---------------- */
 .Internship_experience_more{
 	color: #596c7e;
 	font-weight: 600;
@@ -826,30 +842,6 @@ img{
 	font-size: 14px;
 	color: #475059;
 }
-.Memoirs{
-	padding-top: 27px;
-	margin: auto;
-	border: 2px solid #bbbbd3; 
-	height: 320px; 
-	max-width: 700px;
-	border-radius: 20px;
-	background: linear-gradient(45deg,#ffffff, #85b7dd);;
-}
-.Memoirs_block{
-	text-align: center;
-}
-
-.Memoirs_img{
-	height: 240px;
-	/* object-fit: cover; */
-	border-radius: 5px;
-	overflow: hidden;
-}
-.work_section{
-	border: 1px solid #596c7e;
-	border-radius: 17px;
-	padding: 10px 20px;
-}
 .work_container{
 	background: url(img/內容/Day_1.png);
 	background-size: contain;  
@@ -857,9 +849,6 @@ img{
 	width: 150px;
 	margin-left: 20px;
 	margin-right: 20px;
-
-	background-attachment: lazy;
-	
 }
 .Slide_leftright{
 	overflow: hidden;
@@ -886,24 +875,30 @@ img{
 	display: flex;
 	overflow-x: auto; /* 添加这一行 */
 }
+/*---------------實習內容end---------------- */
+/*---------------- 實習心得---------------- */
+.Memoirs{
+	padding-top: 27px;
+	margin: auto;
+	border: 2px solid #bbbbd3; 
+	height: 320px; 
+	max-width: 700px;
+	border-radius: 20px;
+	background: linear-gradient(45deg,#ffffff, #85b7dd);;
+}
+.Memoirs_block{
+	text-align: center;
+}
+
+.work_section{
+	border: 1px solid #596c7e;
+	border-radius: 17px;
+	padding: 10px 20px;
+}
 
 /*----------------end 實習心得---------------- */
 
-.icon_1{
-    color: #000;
-    border: solid;
-    text-rendering: auto;
-    padding: 10px;
-    border-radius: 55px;
-}
-.carousel_1{
-	width: 10% !important;
-	opacity: .3 !important;
-}
-
-
 /* ========= */
-
 .footer{
 	margin-top: 40px;
 	text-align: center;
