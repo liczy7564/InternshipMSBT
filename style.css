@@ -136,7 +136,10 @@ img{
 		display: none;
 	}
 }
-
+table {
+    width: 95%;
+	margin: auto;
+}
 /* -----------icon ---------*/
 .top-Anchor{
 	position: fixed;
@@ -357,6 +360,7 @@ img{
 	font-size: 15px;
 }
 .title_2{
+	width: 100%;
 	color: #415198;
 	font-size: 15px;
 	font-weight: 500;
@@ -470,10 +474,10 @@ img{
 		width: 80%;
 		margin: auto;
 	}
-	.about_Skill_revision{
+	/* .about_Skill_revision{
 		width: 75%;
 		margin: auto;
-	}
+	} */
 	.alignitems_center{
 		align-items: center;
 		display: flex;
@@ -503,9 +507,7 @@ img{
 @media (max-width:600px) {  /* 小 */
 	.about_Skill_revision{
 		width: 93%;
-		margin-left: 5%;
-		margin-right: -5%;
-		padding-left:5%;
+		margin: auto;
 	}
 	.tin_solid{
 		border:1px solid #efefef;
@@ -564,39 +566,11 @@ img{
 	margin: 5px;
 }
 /* 證照 */
-.image_3 {
-    width: 100px;
-    float: left;
-    background-image: url(img/img-3.png);
-    height: 94px;
-    background-repeat: no-repeat;
-    top: -40px;
-    position: relative;
-	margin-bottom: -20px;
-}
-.container_Certifications p{
+
+.container_Certifications {
 	font-size: 13px;
-}
-.about_Skill_5{
-	float:left; 
-	width: 54%;
-}
-.about_Skill_2{
-	float:left; 
-	width: 20%;
-	
-}
-.about_Skill_3{
-	float:left; 
-	width: 26%;
-}
-.about_Skill_4{
-	float:left; 
-	width: 36%;
-}
-.about_Skill_33{
-	float:left; 
-	width: 33%;
+	max-width: 400px;
+	margin: auto;
 }
 .box_section{
 	padding:42px 0px 0px 0px ;
@@ -604,8 +578,9 @@ img{
 
 }
 .container_Skill{
-	width: auto;
 	margin: auto;
+	max-width: 500px;
+	font-size: 14px;
 }
 .box_main {
     width: 100%;

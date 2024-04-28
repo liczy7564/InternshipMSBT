@@ -9,27 +9,34 @@ $(document).ready(function(){
   $.ajax({
     url:"Json/Certificate.json",
     success:function(result){
-      for(let i=0;i<result.length;i++){
-      container_Certifications.innerHTML+="<div class='about_Skill_5 mar_auto'><p>"+
-      result[i]['name']+"</p></div><div class='about_Skill_2 text_center'><p>"+
-      result[i]['wh']+"</p></div><div class='about_Skill_3 text_center'><p>"+
-      result[i]['date']+"</p></div>"
+      var Certifications = "<table><tr><th>"+result[0]['name']+"</th><th class='text_center'>"+result[0]['wh']+"</th><th>"+result[0]['date']+"</th</tr>";
+      for(let i=1;i<result.length;i++){
+        Certifications +="<tr><td>"+
+      result[i]['name']+"</td><td class='text_center'>"+
+      result[i]['wh']+"</td><td>"+
+      result[i]['date']+"</td><tr>"
       }
+      Certifications +="</table>";
+      container_Certifications.innerHTML+=Certifications;
     }
   });
  // 實習運用
-	let Skill=document.querySelector(".container_Skill");
+  let Skill=document.querySelector(".container_Skill");
   $.ajax({
     url:"Json/skill.json",
     success:function(result){
-      for(let i=0;i<result.length;i++){
-      Skill.innerHTML+="<div class='about_Skill_3 .mar_auto'><p>"+
-      result[i]['name']+"</p></div><div class='about_Skill_4 text_center'><p>"+
-      result[i]['what']+"</p></div><div class='about_Skill_3'><p>"+
-      result[i]['about']+"</p></div>"
+      var skill= "<table><tr><th>"+result[0]['name']+"</th><th class='text_center'>"+result[0]['what']+"</th><th>"+result[0]['about']+"</th</tr>";
+      for(let i=1;i<result.length;i++){
+        skill +="<tr><td>"+
+      result[i]['name']+"</td><td class='text_center'>"+
+      result[i]['what']+"</td><td>"+
+      result[i]['about']+"</td><tr>"
       }
+      skill +="</table>";
+      Skill.innerHTML+=skill;
     }
   });
+
   // 大學經歷
   let Activity_1=document.querySelector(".container_Activity_1");
   $.ajax({
