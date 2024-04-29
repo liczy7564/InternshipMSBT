@@ -225,10 +225,10 @@ $(".Achievements_examples_1").click(function(){
   $(".Achievements_examples_1_open").slideToggle("slow");
   let work_1_more=document.querySelector(".work_1_more");
   setTimeout(function() {
-    if ($('.work_1_more_open').css('display') === 'none') {
-      work_1_more.innerHTML = "查看範例";
+    if ($('.Achievements_examples_1').css('display') === 'none') {
+      Achievements_examples_1.innerHTML = "查看範例";
     }else{
-      work_1_more.innerHTML = "收起範例";
+      Achievements_examples_1.innerHTML = "收起範例";
     }
   }, 1000);
 });
