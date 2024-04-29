@@ -210,12 +210,9 @@ $(document).ready(function(){
     work_showelementor();
   });
 
-  $(".work_1_more").click(function(){
+$(".work_1_more").click(function(){
   $(".work_1_more_open").slideToggle("slow");
-
   let work_1_more=document.querySelector(".work_1_more");
-
-
   setTimeout(function() {
     if ($('.work_1_more_open').css('display') === 'none') {
       work_1_more.innerHTML = "查看說明";
@@ -223,8 +220,18 @@ $(document).ready(function(){
       work_1_more.innerHTML = "收起說明";
     }
   }, 1000);
-
-  });
+});
+$(".Achievements_examples_1").click(function(){
+  $(".Achievements_examples_1_open").slideToggle("slow");
+  let work_1_more=document.querySelector(".work_1_more");
+  setTimeout(function() {
+    if ($('.work_1_more_open').css('display') === 'none') {
+      work_1_more.innerHTML = "查看範例";
+    }else{
+      work_1_more.innerHTML = "收起範例";
+    }
+  }, 1000);
+});
   $(".Internship_experience_more").click(function(){
     $(".Internship_experience_else").slideToggle("slow");
   });

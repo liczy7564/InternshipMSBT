@@ -373,6 +373,12 @@ table {
 	letter-spacing: 7px;
 	text-shadow: 4px 4px 15px #4854bf;
 }
+.title_4{
+	color: #415198;
+	font-size: 17px;
+	font-weight: 500;
+	padding-top: 2px;
+}
 .text_1{
 	font-size: 10px;
 }
@@ -663,9 +669,15 @@ table {
 	.the_company_content{
 		font-size: 14px;
 	}
-	
+	.Achievements_examples_1_open_block{
+		width: 50%;
+		float: left;
+	}
 } 
 @media (max-width:600px) {  /* 小 */
+	.Achievements_examples_1_open_block{
+		width: 100%;
+	}
 	.the_company_count{
 		font-size: 17px;
 		font-weight: 500;
@@ -872,6 +884,22 @@ table {
 }
 
 /*----------------end 實習心得---------------- */
+.Achievements_examples_1{
+	color: #596c7e;
+	font-weight: 600;
+}
+.Achievements_examples_1_open{
+	display: none;
+	border: 2px solid #054282;
+	padding: 10px ;
+	border-radius: 15px;
+}
+.Achievements_examples_1_open li{
+	font-size: 14px;
+}
+.examples_img{
+	width: 100%;
+}
 
 /* ========= */
 .footer{
