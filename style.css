@@ -602,7 +602,6 @@ table {
     margin-top: 10px;
 }
 .readable_text {
-    /* float: left; */
     color: #0c0b0e;
 }
 
@@ -777,7 +776,7 @@ table {
 	overflow-x: auto;
 }
 .cooperate_block{
-	display:inline-block;
+	display: inline-table;
 	border:2px solid #96afc7c7;
 	padding: 10px;
 	width: 75vw;
@@ -787,12 +786,14 @@ table {
 }
 .cooperate_contact{
 	width: 100%;
+	height: 100px;
+	overflow: auto;
 }
 .cooperate_block a{
 	font-size: 13px;
 	white-space: normal;
 	color: #938b8b;
-	float: left;
+	/* float: left; */
 }
 /* ----------------公司介紹end---------------- */
 

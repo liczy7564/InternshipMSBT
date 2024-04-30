@@ -117,8 +117,8 @@ $(document).ready(function(){
       ajax_cooperate.innerHTML+="<div class='cooperate_block'><"+result[i]['media']+" class='cooperate_img'loading='lazy' src='"+
       result[i]['media_src']+"' style='width: 100%;' alt=''></"+result[i]['media']+"><h6 >"+
       result[i]['Name']+"</h6><div class='cooperate_contact'><span class='title_2'>"+
-      result[i]['type_1']+"</span><br><a href='"+result[i]['link_1']+"'>"+result[i]['link_title_1']+"</a><br><span class='title_2'>"+
-      result[i]['type_2']+"</span><br><a href='"+result[i]['link_2']+"'>"+result[i]['link_title_2']+"</a><br>"
+      result[i]['type_1']+"</span><br><a href='"+result[i]['link_1']+"' target='_blank'>"+result[i]['link_title_1']+"</a><br><span class='title_2'>"+
+      result[i]['type_2']+"</span><br><a href='"+result[i]['link_2']+"' target='_blank'>"+result[i]['link_title_2']+"</a>"
       }
     }
   });
@@ -225,10 +225,10 @@ $(".Achievements_examples_1").click(function(){
   $(".Achievements_examples_1_open").slideToggle("slow");
   let work_1_more=document.querySelector(".work_1_more");
   setTimeout(function() {
-    if ($('.Achievements_examples_1').css('display') === 'none') {
-      Achievements_examples_1.innerHTML = "查看範例";
+    if ($('.work_1_more_open').css('display') === 'none') {
+      work_1_more.innerHTML = "查看範例";
     }else{
-      Achievements_examples_1.innerHTML = "收起範例";
+      work_1_more.innerHTML = "收起範例";
     }
   }, 1000);
 });
