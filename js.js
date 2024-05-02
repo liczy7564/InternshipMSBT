@@ -39,49 +39,91 @@ $(document).ready(function(){
 
   // 大學經歷
   let Activity_1=document.querySelector(".container_Activity_1");
-  $.ajax({
-    url:"Json/Activity.json",
-    success:function(result){
-      for(let i=0;i<5;i++){
-        Activity_1.innerHTML+="<div class='row'><div class='col-5'><p>"+
-      result[i]['time']+"</p></div><div class='col-7'><p>"+
-      result[i]['name']+"</p></div></div>"
-      }
-    }
-  });
   let Activity_2=document.querySelector(".container_Activity_2");
-  $.ajax({
-    url:"Json/Activity.json",
-    success:function(result){
-      for(let i=5;i<10;i++){
-        Activity_2.innerHTML+="<div class='row'><div class='col-5'><p>"+
-      result[i]['time']+"</p></div><div class='col-7'><p>"+
-      result[i]['name']+"</p></div></div>"
-      }
-    }
-  });
   let Activity_3=document.querySelector(".container_Activity_3");
-  $.ajax({
-    url:"Json/Activity.json",
-    success:function(result){
-      for(let i=10;i<16;i++){
-        Activity_3.innerHTML+="<div class='row'><div class='col-5'><p>"+
-      result[i]['time']+"</p></div><div class='col-7'><p>"+
-      result[i]['name']+"</p></div></div>"
-      }
-    }
-  });
   let Activity_4=document.querySelector(".container_Activity_4");
+
   $.ajax({
-    url:"Json/Activity.json",
-    success:function(result){
-      for(let i=16;i<20;i++){
-        Activity_4.innerHTML+="<div class='row'><div class='col-3'><p>"+
-      result[i]['time']+"</p></div><div class='col-9'><p>"+
-      result[i]['name']+"</p></div></div>"
+      url:"Json/Activity.json",
+      success:function(result){
+        var ajax_1 = "<table><tr><th>"+result[0]['time']+"</th><th>"+result[0]['name']+"</th></tr>";
+  var ajax_2 = "<table><tr><th>"+result[1]['time']+"</th><th>"+result[0]['name']+"</th></tr>";
+  var ajax_3 = "<table><tr><th>"+result[2]['time']+"</th><th>"+result[0]['name']+"</th></tr>";
+  var ajax_4 = "<table><tr><th>"+result[3]['time']+"</th><th>"+result[0]['name']+"</th></tr>";
+      for(let i=4;i<result.length;i++){
+        if(result[i]['type']=='cadre'){
+          ajax_1 +="<tr><td>"+
+          result[i]['time']+"</td><td>"+
+          result[i]['name']+"</td><tr>"
+        }else if(result[i]['type']=='volunteer'){
+          ajax_2 +="<tr><td>"+
+          result[i]['time']+"</td><td>"+
+          result[i]['name']+"</td><tr>"
+        }else if(result[i]['type']=='else'){
+          ajax_3 +="<tr><td>"+
+          result[i]['time']+"</td><td>"+
+          result[i]['name']+"</td><tr>"
+        }else{
+          ajax_4 +="<tr><td>"+
+          result[i]['time']+"</td><td>"+
+          result[i]['name']+"</td><tr>"
+        }
       }
+      ajax_1 +="</table>";
+      ajax_2 +="</table>";
+      ajax_3 +="</table>";
+      ajax_4 +="</table>";
+      Activity_1.innerHTML+=ajax_1;
+      Activity_2.innerHTML+=ajax_2;
+      Activity_3.innerHTML+=ajax_3;
+      Activity_4.innerHTML+=ajax_4;
+
     }
   });
+  // let Activity_1=document.querySelector(".container_Activity_1");
+  // $.ajax({
+  //   url:"Json/Activity.json",
+  //   success:function(result){
+  //     for(let i=0;i<5;i++){
+  //       Activity_1.innerHTML+="<div class='row'><div class='col-5'><p>"+
+  //     result[i]['time']+"</p></div><div class='col-7'><p>"+
+  //     result[i]['name']+"</p></div></div>"
+  //     }
+  //   }
+  // });
+  // let Activity_2=document.querySelector(".container_Activity_2");
+  // $.ajax({
+  //   url:"Json/Activity.json",
+  //   success:function(result){
+  //     for(let i=5;i<10;i++){
+  //       Activity_2.innerHTML+="<div class='row'><div class='col-5'><p>"+
+  //     result[i]['time']+"</p></div><div class='col-7'><p>"+
+  //     result[i]['name']+"</p></div></div>"
+  //     }
+  //   }
+  // });
+  // let Activity_3=document.querySelector(".container_Activity_3");
+  // $.ajax({
+  //   url:"Json/Activity.json",
+  //   success:function(result){
+  //     for(let i=10;i<16;i++){
+  //       Activity_3.innerHTML+="<div class='row'><div class='col-5'><p>"+
+  //     result[i]['time']+"</p></div><div class='col-7'><p>"+
+  //     result[i]['name']+"</p></div></div>"
+  //     }
+  //   }
+  // });
+  // let Activity_4=document.querySelector(".container_Activity_4");
+  // $.ajax({
+  //   url:"Json/Activity.json",
+  //   success:function(result){
+  //     for(let i=16;i<20;i++){
+  //       Activity_4.innerHTML+="<div class='row'><div class='col-3'><p>"+
+  //     result[i]['time']+"</p></div><div class='col-9'><p>"+
+  //     result[i]['name']+"</p></div></div>"
+  //     }
+  //   }
+  // });
   // 回憶錄
   let album=document.querySelector(".album");
   $.ajax({

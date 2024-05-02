@@ -16,16 +16,22 @@ body{
 * {
 	scrollbar-width: none; /* Firefox 隱藏滾動條 */
 }
+:root{
+	--theme-Dark-color: #054282;       
+	--theme-light-color: #596c7e;
+	--Dark-color: #142624; 
+	--light-color: #f4f4ed;  
+}
 hr{
 	width: 70%;
 	margin: auto;
 }
 a{
-	color: #054282;
+	color: var(--theme-Dark-color);
 	text-decoration: none;
 }
 a:link{
-	color: #054282;
+	color: var(--theme-Dark-color);
 	text-decoration:none;
 }
 a:hover{
@@ -557,6 +563,14 @@ table {
     	height: 178px;
 	}
 }
+.university_card td{
+	font-size: 14px;
+}
+.university_card th{
+	font-size: 15px;
+	font-weight: 400;
+	color: #054282;
+}
 .center{
     display: flex;
     align-items: center;
@@ -710,7 +724,7 @@ table {
 	width:40px;
 }
 .read_more{
-	color: #596c7e;
+	color:var(--theme-light-color);
 	font-weight: 600;
 	margin-left: 8px;
 }
@@ -799,7 +813,7 @@ table {
 
 /*---------------實習內容---------------- */
 .Internship_experience_more{
-	color: #596c7e;
+	color: var(--theme-light-color);
 	font-weight: 600;
 }
 .Internship_experience_else{
@@ -879,19 +893,19 @@ table {
 }
 
 .work_section{
-	border: 1px solid #596c7e;
+	border: 1px solid var(--theme-light-color);
 	border-radius: 17px;
 	padding: 10px 20px;
 }
 
 /*----------------end 實習心得---------------- */
 .Achievements_examples_1{
-	color: #596c7e;
+	color: var(--theme-light-color);
 	font-weight: 600;
 }
 .Achievements_examples_1_open{
 	display: none;
-	border: 2px solid #054282;
+	border: 2px solid var(--theme-Dark-color);
 	padding: 10px ;
 	border-radius: 15px;
 }
@@ -909,6 +923,6 @@ table {
 	padding: 18px;
 	font-size: 15px;
 	height: 90px;
-	background-color: #054282;
+	background-color: var(--theme-Dark-color);
 	color: #fff;
 }
